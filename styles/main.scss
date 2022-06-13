@@ -1,0 +1,283 @@
+body {
+    font-family: 'Poppins';
+    margin: 1.5em;
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+.hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../images/shoe4.jpg);
+    background-position-x: 20%;
+    background-position-y: 20%;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    animation: introLoad 2s forwards;
+    // overflow: hidden;
+}
+
+.logo {
+    color: white;
+    font-weight: bold;
+}
+
+nav {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    background: white;
+    width: 50%;
+    z-index: 999;
+    text-transform: uppercase;
+    transform: translateX(100%);
+    transition: .5s ease-in-out;
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 8em;
+
+        a {
+            color: black;
+            padding: .75em 2em;
+            display: block;
+            width: 100%;
+            &:hover {
+                background: rgb(235, 235, 235);
+                transition: 0.15s;
+            }
+        }
+    }
+
+    .close {
+        float: right;
+        margin: 1em;
+        width: 1.8em;
+        cursor: pointer;
+    }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+
+    .menu {
+        width: 2.2em;
+        margin-top: -.6em;
+        cursor: pointer;
+    }
+}
+
+h1 {
+    font-size: 3rem;
+    margin-top: 2em;
+    line-height: 3.3rem;
+}
+
+.subhead {
+    font-size:  1.4rem;
+}
+
+section.hero {
+    color: white;
+    height: 90vh;
+    animation: moveDown 1s ease-in-out forwards;
+    opacity: 0;
+
+    .down-arrow {
+        stroke: white;
+        position: absolute;
+        bottom: 2em;
+        width: 1em;
+        animation: moveArrow 1s alternate-reverse infinite;
+
+        path {
+            fill: white;
+        }
+    }
+}
+
+.more-info {
+    img {
+        width: 100%;
+        object-fit: cover;
+        height: 14em;
+    }
+
+    .title {
+        font-weight: bold;
+        margin-bottom: 0;
+        font-size: 1.25rem;
+    }
+
+    .desc {
+        margin-top: 5px;
+        line-height: 1.5rem;
+        font-size: 1.1rem;
+    }
+}
+
+.open-nav {
+    transform: translateX(0);
+}
+@media only screen and (min-width: 280px) {
+    body {
+        font-family: 'Poppins';
+        margin: 1.5em 5em;
+    }
+
+    section.hero {
+        .down-arrow {
+            stroke: white;
+            position: relative;
+            margin-top: 6em;
+            bottom: 2em;
+            width: 1em;
+            animation: moveArrow 1s alternate-reverse infinite;
+    
+            path {
+                fill: white;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 680px) {
+    body {
+        font-family: 'Poppins';
+        margin: 1.5em 5em;
+    }
+
+    section.hero {
+        .down-arrow {
+            stroke: white;
+            position: relative;
+            margin-top: 6em;
+            bottom: 2em;
+            width: 1em;
+            animation: moveArrow 1s alternate-reverse infinite;
+    
+            path {
+                fill: white;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 920px) {
+    .menu {
+        display: none;
+    }
+
+    nav {
+        transform: translateX(0);
+        position: unset;
+        display: block;
+        width: auto;
+        height: auto;
+        background: none;
+
+        svg.close {
+            display: none;
+        }
+
+        ul {
+            display: flex;
+            margin: 0;
+
+            a {
+                color: white;
+                padding: .5em 1.5em;
+                font-size: .9rem;
+                
+                &:hover {
+                    background: none;
+                    text-decoration: underline;
+                    transition: 0.5s ease-in-out;
+                }
+            }
+        }
+    }
+
+    .hero-img {
+        left: unset;
+        right: 0;
+        width: 50%;
+        height: 38em;
+    }
+
+    .logo {
+        color: black;
+    }
+
+    section.hero {
+        color: black;
+        height: auto;
+        width: 40%;
+        margin-bottom: 5em;
+        
+        h1{
+            margin-bottom: 0em;
+        }
+
+        svg.down-arrow {
+            stroke: black;
+            position: unset;
+            margin-top: 3em;
+
+            path {
+                fill: black;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .wrapper {
+        width: 1200px;
+        margin: 0 auto;
+    }
+
+    .feature {
+        gap: 0;
+    }
+}
+
+@keyframes introLoad {
+    from {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    to {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+
+@keyframes moveArrow {
+    from {
+        transform: translateY(-30px)
+    }
+    to {
+        transform: translateY(0)
+    }
+}
+
+@keyframes moveDown {
+    from {
+        transform: translateY(-100px)
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
